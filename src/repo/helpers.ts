@@ -1,7 +1,7 @@
-export const readFromDisk = (file: string) => {
-    return 'Datos leidos del disco desde' + file;
+export const readFromDisk = (file: string): string => {
+    return 'readFromDisk: ' + file;
 };
 
-export const writeToDisk = (data: string) => {
+export const writeToDisk = (file: string, data: string): void => {
     console.log(data);
 };
