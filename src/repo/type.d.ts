@@ -1,6 +1,6 @@
 export type WithId = { id: string };
 
-export interface TypeORM<T extends WithId> {
+export interface TypeODM<T extends WithId> {
     read: () => T[];
     readById: (id: T['id']) => T | null;
     create: (data: Omit<T, 'id'>) => T;
