@@ -33,3 +33,9 @@
 
 // const repo = new RepoItemFile();
 // console.log(repo.read());
+
+
+// Sustitución a dotenv
+
+process.loadEnvFile()
+console.log(process.env.)
