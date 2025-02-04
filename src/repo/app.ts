@@ -34,8 +34,25 @@
 // const repo = new RepoItemFile();
 // console.log(repo.read());
 
-
 // Sustitución a dotenv
+process.loadEnvFile('../data/.env');
+console.log(process.env.DB_HOST);
 
-process.loadEnvFile()
-console.log(process.env.)
+// sustitucion de librería chalk
+import { styleText } from 'node:util';
+
+console.log(styleText('red', styleText('bold', 'Mensaje en negrita y rojo')));
+
+// Ficheros asincronos
+import fs from 'node:fs/promises';
+import { resolve } from 'node:path';
+
+const path = resolve('../data') + '/prueba.json';
+const data = '{ "name":"pepe", "age":22}';
+const promise = fs.writeFile(path, data);
+promise.catch((err) => {
+    console.error(err);
+});
+promise.then((response) => {
+    console.log('response: ', response);
+});
